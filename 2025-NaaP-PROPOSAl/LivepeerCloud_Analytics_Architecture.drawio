@@ -1,0 +1,308 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="28.2.8" pages="2">
+  <diagram name="Decentralized AI Metrics" id="nB1lWLWKNkj-b8Iiel_D">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-3" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="603" y="244" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-1" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="613" y="264" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-2" value="Orchestrators" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="623" y="284" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-4" value="Apps" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="338" y="103" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-6" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="347" y="244" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-7" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="357" y="264" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-8" target="x4cqfb8pp33Au3f5UQVB-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-11" value="Submit Jobs&lt;br&gt;for Processing" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-10">
+          <mxGeometry x="-0.0714" y="4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-8" value="Gateways" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="367" y="284" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-5" value="" style="endArrow=classic;html=1;rounded=0;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-4" target="x4cqfb8pp33Au3f5UQVB-8">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="587" y="434" as="sourcePoint" />
+            <mxPoint x="637" y="384" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-9" value="Submit&amp;nbsp;&lt;br&gt;AI&amp;nbsp;Jobs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-5">
+          <mxGeometry x="-0.3911" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-12" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="827" y="244" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-13" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="837" y="264" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-14" value="AI&lt;br&gt;Workers /&amp;nbsp; Runners" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="847" y="284" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-2" target="x4cqfb8pp33Au3f5UQVB-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-16" value="Process &lt;br&gt;AI Jobs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-15">
+          <mxGeometry x="0.0667" y="1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-37" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-17" target="x4cqfb8pp33Au3f5UQVB-28">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-39" value="Read &lt;br&gt;Real-time Metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-37">
+          <mxGeometry x="0.0941" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-17" value="Streamr.Network" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="526" y="484" width="270" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.16;entryY=0.55;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-8" target="x4cqfb8pp33Au3f5UQVB-17">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="407" y="528" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-21" value="Publish&lt;br&gt;Gateway&lt;br&gt;Metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-18">
+          <mxGeometry x="-0.4568" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-19" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.511;entryY=0.113;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-2" target="x4cqfb8pp33Au3f5UQVB-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-22" value="Publish&lt;br&gt;Orchestrator &amp;amp; Runner&lt;br&gt;Metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-19">
+          <mxGeometry x="-0.0603" y="1" relative="1" as="geometry">
+            <mxPoint x="-4" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-20" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-14" target="x4cqfb8pp33Au3f5UQVB-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="887" y="440" />
+              <mxPoint x="750" y="440" />
+              <mxPoint x="750" y="344" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-23" value="Publish &lt;br&gt;Runner&lt;br&gt;Metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-20">
+          <mxGeometry x="-0.5104" y="-1" relative="1" as="geometry">
+            <mxPoint x="-56" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-24" value="&lt;b&gt;* This includes Livepeer.Cloud&#39;s Gateway AND others&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="207" y="274" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-26" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;AI Analytics Architecture&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;High level overview of analytics data flow for Livepeer&#39;s AI Subnet&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="487" y="64" width="391" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-27" target="x4cqfb8pp33Au3f5UQVB-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-44" value="Read Metric Data" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-43">
+          <mxGeometry x="-0.2183" y="-1" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-27" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
+          <mxGeometry x="487" y="794" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-28" target="x4cqfb8pp33Au3f5UQVB-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-33" value="Aggregate&amp;nbsp; &amp;amp; Store&lt;br&gt;Real-time Metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-32">
+          <mxGeometry x="-0.15" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-28" value="Livepeer.Cloud&lt;br&gt;Data Consumer" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="467" y="624" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-29" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="693" y="624" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-30" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="703" y="634" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-31" value="Other Data Consumers" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="713" y="644" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-34" value="&lt;b&gt;* An open-source example application consuming Livepeer Streamr Metrics&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="267" y="644" width="180" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-35" value="&lt;b&gt;* Other potential consumer applications&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="813" y="644" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-38" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.8;exitY=0.8;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.4;entryY=0.03;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-17" target="x4cqfb8pp33Au3f5UQVB-31">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-40" value="Read &lt;br&gt;Real-time Metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-38">
+          <mxGeometry x="-0.0727" y="3" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-42" value="Livepeer.Cloud&lt;br&gt;Analytics Endpoint" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="467" y="950" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-46" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-45" target="x4cqfb8pp33Au3f5UQVB-42">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-47" value="Access AI&amp;nbsp;&lt;div&gt;Analytics Data&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-46">
+          <mxGeometry x="0.1934" y="3" relative="1" as="geometry">
+            <mxPoint x="17" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-45" value="Livepeer Explorer" style="whiteSpace=wrap;html=1;aspect=fixed;" vertex="1" parent="1">
+          <mxGeometry x="713" y="950" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-48" value="&lt;b&gt;* Display AI Performance Leaderboard&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="813" y="950" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-49" value="&lt;b&gt;* An open-source example application to provide Dashboard Access&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="227" y="950" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-50" value="&lt;b&gt;Author: &lt;/b&gt;Livepeer.Cloud SPE Team&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="458" y="140" width="250" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-51" value="&lt;b&gt;Date: &lt;/b&gt;July 2024&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="485" y="172" width="96" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-53" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.875;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-52" target="x4cqfb8pp33Au3f5UQVB-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-54" value="Submit &lt;br&gt;Test AI Jobs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-53">
+          <mxGeometry x="-0.0989" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-52" value="AI Tester Tool" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="404" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-55" value="&lt;b&gt;* An open-source example application submitting AI Test Jobs&amp;nbsp;&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="77" y="500" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-56" value="Streamr Access Controller" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="950" y="485" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-57" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.07;exitY=0.4;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.91;entryY=0.467;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="x4cqfb8pp33Au3f5UQVB-56" target="x4cqfb8pp33Au3f5UQVB-17">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-58" value="Enable/Disable &lt;br&gt;Stream Write access" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="x4cqfb8pp33Au3f5UQVB-57">
+          <mxGeometry x="-0.1676" y="2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="x4cqfb8pp33Au3f5UQVB-59" value="&lt;b&gt;* An open-source example application that monitors Active Orchs &amp;amp; Gateways write permissions to streamr.network&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="1080" y="500" width="160" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="AI Tester Metrics" id="PMhF91RHF3ZDI4ADrLws">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-0" />
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-1" parent="ZB4fhTlKngWiHcyDPNll-0" />
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-2" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="730" y="244" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-3" value="" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="740" y="264" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-4" value="All AI Orchestrators" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="750" y="284" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-18" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.55;exitY=0.95;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.75;entryY=0;entryDx=0;entryDy=0;" parent="ZB4fhTlKngWiHcyDPNll-1" source="ZB4fhTlKngWiHcyDPNll-52" target="ZB4fhTlKngWiHcyDPNll-34" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="674.5" y="560" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="0Opxa_DpKfgbGYmcHloh-0" value="Write &lt;br&gt;Performance&lt;br&gt;data" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="ZB4fhTlKngWiHcyDPNll-18">
+          <mxGeometry x="-0.4384" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-28" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;AI Job Tester Overview&lt;br&gt;&lt;/span&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;High level overview of &quot;Stream Tester&quot; architecture for Livepeer&#39;s AI Subnet&lt;br&gt;&lt;/span&gt;&lt;br&gt;&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial; font-size: 12px; font-weight: normal;&quot;&gt;&lt;br&gt;&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="487" y="64" width="443" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-31" value="" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="490" y="620" width="60" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-32" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="ZB4fhTlKngWiHcyDPNll-1" source="ZB4fhTlKngWiHcyDPNll-34" target="ZB4fhTlKngWiHcyDPNll-31" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-33" value="Store Test Data&lt;br&gt;&amp;nbsp;Metrics" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ZB4fhTlKngWiHcyDPNll-32" connectable="0" vertex="1">
+          <mxGeometry x="-0.15" y="-2" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-34" value="Vercel &lt;br&gt;Leaderboard&lt;br&gt;Data API" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="467" y="430" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-43" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="ZB4fhTlKngWiHcyDPNll-1" source="ZB4fhTlKngWiHcyDPNll-45" target="ZB4fhTlKngWiHcyDPNll-34" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="600" y="490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-44" value="Access AI&amp;nbsp;&lt;div&gt;Analytics Data&lt;/div&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ZB4fhTlKngWiHcyDPNll-43" connectable="0" vertex="1">
+          <mxGeometry x="0.1934" y="3" relative="1" as="geometry">
+            <mxPoint x="17" y="-3" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-45" value="Livepeer Explorer" style="whiteSpace=wrap;html=1;aspect=fixed;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="746" y="431" width="100" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-46" value="&lt;b&gt;* Display AI Performance Leaderboard&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="850" y="440" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-48" value="&lt;b&gt;Author: &lt;/b&gt;Livepeer.Cloud SPE Team&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="458" y="144" width="250" height="32" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-49" value="&lt;b&gt;Date: &lt;/b&gt;July 2024&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="489" y="174" width="96" height="28" as="geometry" />
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-50" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.875;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;" parent="ZB4fhTlKngWiHcyDPNll-1" source="ZB4fhTlKngWiHcyDPNll-52" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="730" y="304" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-51" value="Submit &lt;br&gt;Test AI Jobs" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="ZB4fhTlKngWiHcyDPNll-50" connectable="0" vertex="1">
+          <mxGeometry x="-0.0989" y="-4" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ZB4fhTlKngWiHcyDPNll-52" value="AI Tester Tool" style="ellipse;shape=cloud;whiteSpace=wrap;html=1;" parent="ZB4fhTlKngWiHcyDPNll-1" vertex="1">
+          <mxGeometry x="420" y="264" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="0Opxa_DpKfgbGYmcHloh-1" value="&lt;b&gt;* Existing Postgres/Mongo Database&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZB4fhTlKngWiHcyDPNll-1">
+          <mxGeometry x="567" y="627.5" width="220" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="0Opxa_DpKfgbGYmcHloh-2" value="&lt;b&gt;* Existing Stats API&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZB4fhTlKngWiHcyDPNll-1">
+          <mxGeometry x="308" y="448.5" width="150" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="0Opxa_DpKfgbGYmcHloh-3" value="&lt;b&gt;* Existing Stream Tester&lt;br&gt;modified for AI Jobs&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZB4fhTlKngWiHcyDPNll-1">
+          <mxGeometry x="275" y="271.5" width="150" height="65" as="geometry" />
+        </mxCell>
+        <mxCell id="0Opxa_DpKfgbGYmcHloh-4" value="&lt;b&gt;* All AI Orchestrators&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="ZB4fhTlKngWiHcyDPNll-1">
+          <mxGeometry x="830" y="271.5" width="150" height="65" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
