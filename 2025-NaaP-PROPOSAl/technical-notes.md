@@ -320,3 +320,64 @@ https://docs.streamr.network/usage/streams/signature-verification/#smart-contrac
 
 See Comments in the 
 https://www.notion.so/livepeer/Network-as-a-Product-MVP-SLA-Metrics-Analytics-Infra-2a70a3485687802ebbdad8a1a501827a
+
+
+General Themes
+
+* Josh needs to understand how Latency is measured. 
+* Josh says swap rate is already measured, but needs to work on the swap reasons. here is an example: https://eu-metrics-monitoring.livepeer.live/grafana/d/c711a631-97bf-4c75-b640-aae699d8a280/ai-swaps?orgId=1&from=now-24h&to=now&timezone=utc
+
+* Josh wants to understand the architectural decision of not using Kafka.
+  
+  * Right now our Kafka metrics come from the gateway. Are we planning to keep this architecture, or push additional metrics through the orchestrator itself?
+  * is the raw data ingested by streamr meant to be read by anyone, or is it only for the SPE running the metrics collection so they can transform it into something more useful and public facing? If the latter (SPE only) then I wonder what streamr actually offers; the SPE could just have their own Kafka and save the integration trouble. I’ll bet dollars to donuts that any Kafka provider would be more reliable too.
+  * If we plan to push additional metrics through the orchestrator rather than the gateway, then I suspect a pull-based architecture would work better for us (Prometheus style) rather than have the orchs report their stats to a specially blessed metrics service, which is a form of centralization in itself. This also allows entities to build their own independent data pipelines (eg, Inc and Cloud) without needing to configure orchestrators for specific push-based collection methods such as Kafka or streamr or whatever.
+
+
+  * John (elite encoder) &  Peter (Interptr)  wants to know if the AI Runner will have a package to allow any BYOC to leverage a consistant pckage for publishing measurments to StreamR
+
+  * Brad wants to understand what "Failure Rate" means as a metric. He also feels it should come from the gateway unless its a hardware failure.
+
+  * Brad expresses concerns about "synthetic workloads" and the impact it has on production workloads. 
+    * Qiang belives orchs should have some sorta queue of jobs and tests always are lower prioroity over production workloads
+
+  * Qiang is saying kafka and clickhouse will be used until after milestone 1 adn wait till Streamr is proven, then migrate from kafka to the Streamr approach
+
+  * Rafal doesnt understand what a synthetic workload is
+    * Qiang says "he audit gateway, needs to present a more close-2-production traffic, to obtain the objetive metrics of the whole network. 
+
+      to do this, the workload needs to be generated, not just a set of stale/unchanging set. for example, prompt as one most important traffic input, it can be generated using a rule, to simulate the diversity of prompt, without being too biased. it is a widely used approach in model training and tuning field. we should leverage this approach, to ensure, we do not just use a constant set of prompts, for example, for all models, and workloads. 
+
+      good prompt from krea model, is a good example, they generate different size of prompts from a set of core basic prompts, to ensure their models are performing as expected. we can certainly learn some from that, to earn the crediability from the community at large, our network is performing as we said performant. "
+
+* Brad doesnt think AI Runner should publish metrics to streamr, he thinks it should bubble up to orch and get published.
+
+* Qiang says "It is important to have an evolving test dataset that can capture the evolvement of"
+  * Brad says "I think a framework for submitting tests want ran on the network makes sense.  The start stream requests are relatively similar with main items being height, width and params. These values coupled with the pipeline/model_id to run it with creates what and how to run for the dataset."
+
+
+* Rafal doesnt understand a "Shared Datset" as it relates to synthetic workloads
+  * How will this dataset be created? Each O can server different model, so the output data may not be comparable?
+  * He advises: What we should do is to for each O:
+    1. Get what the “primary” (warm) model O support
+    2. Test the given O with that model
+    3. Record the data but classify it with the specific model
+    4. Use only this for the selection
+
+* Qiang reiterates: "NOTE: for all telemetry events that define a metrics/measurements, the following id must be present to ensure the completeness of the event"
+  * what is MUST-HAVE metadata to identify it??
+  * Rafal states "Yes, I think we need to include the ID in all the telemetry data."
+    
+    * The difficulty here is that AFAIU we have a few different stream IDs (and we should include all of them):
+      - stream Name ⇒ aka. stream key, something that users know
+      - stream ID ⇒ randomly generated ID of the stream created when the user starts streaming
+      - request ID ⇒ randomly generated ID for each user streaming retry
+      - trickle ID ⇒ internal manifest ID used the the G<>O<>R communication
+
+* Qiang states " this is the extended scope that can be optional for milestone 1. however, when you create the first dashboard, many will be surfacing, as those APIs are backbone I would assume, for a dashboard, or any data viz to be built with a well-defined data interface, at its foundation. "
+    *  "Gateway implements a set of APIs that allow SLAs related metrics to be queried"
+
+* Qiang wants to know if the following is accurate:
+    *  "│ Gateway reports pathway metrics such as (e2e latency, swap rate) directly to “streamr” infra"
+
+    
