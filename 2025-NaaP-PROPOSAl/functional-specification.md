@@ -102,9 +102,11 @@ Deliver a **publicly observable, auditable SLA reporting system** for the Livepe
 
 **TODO:** What do we do about quality metrics? like bandwidth, heartbeat, uptime, error rates - anything that does not directly relate to SLA???
 
+**RESPONSE** bandwidth, uptime, error rates all relate to SLA.  We must provide these and utilized them in the SLA composite score.
+
 **TODO:** do we capture life cycle events for gateway, orch (transcoder/worker/runner)
 
-**RESPONSE:** not for MVP of NaaP. This plays more of a role with Open Pool. Events will be capptured based on current open pool incision points, but ignored by data aggregation consumer.
+**RESPONSE:** not for MVP of NaaP. This plays more of a role with Open Pool. Events will be capptured based on current open pool incision points, but ignored by data aggregation consumer.  We can consider capturing all events by broad categories (lifecycle, payment, etc) that align to event types.  Config options cam dictate to alter the frequency of how these are sent (from nothing to all with certain event mandated at a minimum level).
 
 * **Telemetry events MUST be published to Streamr**
 * Applies to:
@@ -133,23 +135,30 @@ Deliver a **publicly observable, auditable SLA reporting system** for the Livepe
 
 **TODO:** The "geo-awareness" of the livepeer nodes makes the event identification important (like region).
 
-**TODO:** The techncial deatils of the event "metadata" need validation and updating.
+**RESPONSE:** Given we have not yet finalized how the region identifier will be used, we can start with a simple, self-reported region value selected from a constrained, code-defined enum (or validated against a lightweight lookup endpoint). Longer term, we can add automated geo-awareness using either (a) an external IP→region web service, or (b) a local GeoIP database. Candidate low-cost/free inputs include ipinfo’s “Lite” endpoint and MaxMind GeoLite2.
 
-**RESPONSE:** we need to make sure each event has the relevant data for the given event type. It must be descernable to what the event actually means.
+We should explicitly account for operator privacy: emitting raw external IPs into a globally consumable event stream (e.g., Streamr) may be unacceptable for some operators. If IP sensitivity is a requirement, the preferred approach is to publish only derived fields (e.g., continent/country/ASN) and avoid including raw IP in the event payload. IP-based enrichment can be performed either locally on the node (no IP disclosure to third parties) or at a trusted ingest layer that observes the source IP at the transport layer and only forwards the derived region.
+
+Operationally, local GeoLite2 usage implies a database distribution and update strategy. MaxMind’s GeoLite terms require deleting older copies within 30 days of a new database release, which effectively means updating on a monthly cadence. External lookup services generally require an API token and introduce a third-party dependency, but reduce client-side footprint and update burden.
+
+**TODO:** The technical details of the event "metadata" need validation and updating.
+
+**RESPONSE:** we need to make sure each event has the relevant data for the given event type. It must be discernible to what the event actually means.
 
 Every event MUST include:
 
 * `stream_id` (or request/session stream ID)
-* `orchestrator_address` (O address)
-* `model_id` (workflow/model identifier)
-* `gateway_id` (originating gateway identifier)
+* `orchestrator_addr` (O address)
+* `gateway_addr` (originating gateway identifier; eth addr)  
 
 ### 4.2 Strongly Recommended IDs
 
-* `runner_id` or `gpu_id` (stable per GPU device)
+* `runner_id` or `gpu_id` (stable per GPU device) - unclear what value this adds; consider removing
 * `job_id` (inference request or batch job)
-* `region` (geo region label)
+* `region` (geo region label) - this should come from a config value.  See notes above re: geo-awareness
 * `dataset_id` (for synthetic runs)
+* `model_id` (model identifier)
+* `pipeline_id` (pipeline identifier)
 * `trace_id` (end-to-end correlation across hops)
 
 ### 4.3 Correlation Rules
@@ -182,7 +191,7 @@ All events are JSON objects with a shared envelope.
 * `timestamp_ms` (UTC epoch millis)
 * `source_type` (`gateway` | `job_tester` | `runner` | `worker` | `transcoder` | `orchestrator`)
 * Required IDs: `stream_id`, `orchestrator_address`, `model_id`, `gateway_id`
-* `region` (optional but recommended)
+* `region` (manually configured; optional)
 * `payload` (event-specific)
 
 ### 5.2 Event Types (Minimum Set)
@@ -211,6 +220,8 @@ All events are JSON objects with a shared envelope.
 
 #### C) Synthetic Test Telemetry
 
+These can be excluded from scope of the MVP since we are not tracking tester actiivty and wnat to keep stream data focused intiially.
+
 * `synthetic.run.start`
 * `synthetic.run.end`
 * `synthetic.sample`
@@ -229,9 +240,9 @@ This section defines **what must be measured, where it comes from, and how it’
 
 ### 6.1 Economics
 
-**TODO:** The CUE  stuff needs to be removed.
-
 #### CUDA Utilization Efficiency (CUE) — **Does Not Exist**
+
+This is documented here for future reference.  It is not included in the scope of the current workstream.
 
 * **Definition:** `CUE = Achieved_FLOPS / Peak_FLOPS`
 * **Source:** Runner/GPU (primary)
@@ -268,7 +279,7 @@ This section defines **what must be measured, where it comes from, and how it’
 
 **TODO:** Do we measure bandwidth during job processing?
 
-**RESPONSE:** We asssume this is idle time. Sampled 1 or 3 times a day. Job processing bandwidth usage wont be taking into account.
+**RESPONSE:** We asssume this is idle time. Sampled 1 or 3 times a day. Job processing bandwidth usage wont be taken into account.
 
 #### Up/Down Bandwidth Mbps — **Does Not Exist**
 
@@ -296,14 +307,14 @@ This section defines **what must be measured, where it comes from, and how it’
 ### 6.3 Performance
 
 
-**TODO:** The values need to be examined based on where the code event will be inserted. This can determine the proper calculation method.
+**TODO:** The values need to be examined based on where the code event will be inserted. This can determine the proper calculation method.  Additional, any metric relying on first frame received might need to differentiate between a loading image and the actual desired output.
 
 #### Startup Times — **Exists Today**
 
 * **Definition:** time from job assigned → GPU ready (or pipeline warm start)
 * **Source:** Gateway
 * **Unit:** ms
-* **Target:** “≤ threshold” (per model/workflow)
+* **Target:** “≤ threshold” (per model/workflow) - tbd if we keep this or fold into SLA scoring formula; a threshold can be set at the display level rather than for calculating beforehand
 
 **Functional requirements**
 
@@ -316,7 +327,7 @@ This section defines **what must be measured, where it comes from, and how it’
 
 **TODO:** How does the job test factor into the E2E Stream latency?
 
-**RESPONSE:** The job tester will not be part of E2E latency score. This could be a future enhancement, but the job tester will NOT publish to Streamr.
+**RESPONSE:** The job tester will not be part of E2E latency score. This could be a future enhancement, but the job tester will NOT publish to Streamr.  We must however be able to determine which metrics produced by the network came from a test job vs a real job.
 
 #### E2E Stream Latency — **Does Not Exist**
 
@@ -339,6 +350,7 @@ This section defines **what must be measured, where it comes from, and how it’
 
   * `e2e_latency_ms = t_ff - t0` (MVP)
   * optionally continuous: `observed_frame_time - expected_frame_time`
+  
 
 **Acceptance criteria**
 
@@ -430,6 +442,8 @@ This section defines **what must be measured, where it comes from, and how it’
 
 **TODO:** How does the swap rate reason get included? is this part of the go-livepeer code?
 
+**RESPONSE:** go-livepeer does not consistenly deal with swaps and the swap reason is only sent to the log.  The swap reason should be standardized in its message and publication.
+
 #### Swap Rate — **Partial**
 
 * **Definition:** `% requests that required failover/swap / total requests`
@@ -491,8 +505,6 @@ This section defines **what must be measured, where it comes from, and how it’
 
 ### 8.2 Input Metrics (MVP)
 
-**TODO:** CUE data needs removal
-
 * Latency:
 
   * Prompt-to-first-frame (P50/P95)
@@ -505,8 +517,6 @@ This section defines **what must be measured, where it comes from, and how it’
 
   * jitter coefficient
 * Efficiency:
-
-  * CUE (if available)
 
 ### 8.3 Scoring Rules
 
@@ -533,7 +543,7 @@ This section defines **what must be measured, where it comes from, and how it’
 
 ## 9. API Specification (Functional)
 
-**TODO:** This was AI generated and needs to be reviewed.
+**TODO:** Updated needs to be reviewed with Qiang.
 
 Base: `https://api.livepeer.cloud/v1/sla`
 
@@ -548,14 +558,13 @@ Base: `https://api.livepeer.cloud/v1/sla`
 **Query params**
 
 * `region`
-* `model_id`
 * `orchestrator_address`
 * `window` (1m/5m/1h)
 * `since`, `until`
 
 **Returns**
 
-* FPS, jitter, CUE, bandwidth, latency if available
+* FPS, jitter, bandwidth, latency if available
 
 ---
 
@@ -565,14 +574,10 @@ Hourly aggregates:
 
 * total streams
 * total inference minutes
-* inference minutes by GPU type
-* capacity rate
-* missing capacity
-* staking/fee metrics (if integrated)
 
 ---
 
-### 9.3 `GET /sla/compliance` (Public)
+### 9.3 `GET /sla/score` (Public)
 
 **Query**
 
@@ -589,14 +594,7 @@ Hourly aggregates:
 
 ### 9.4 `GET /datasets` (Public)
 
-Returns:
-
-* dataset_id
-* workflow/model_id
-* type
-* version
-* location pointers (not necessarily direct URLs)
-* expected runtime profile / test profile compatibility
+These will be stored in github.  No need for an API.  Review with Qiang.
 
 ---
 
@@ -606,7 +604,8 @@ Returns:
 
 **TODO:** How will model_id and workflow be included?? is this data we even capture?
 
-Must include:
+**RESPONSE:** Workflow is not yet a concept in go-livepeer. For now, model id and pipeline id (e.g. live-video-to-video and streamdiffusion-sdxl)
+
 
 * Orchestrator leaderboard by SLA score
 * Filters:
@@ -615,15 +614,19 @@ Must include:
   * model_id / workflow
   * region
   * time range
+
 * Panels:
 
   * E2E latency p50/p95
+  * Latency per hop (Gateway -> Orch -> Runner/Transcoder)
   * Prompt-to-first-frame p50/p95
   * Output FPS vs target
   * Jitter coefficient
   * Failure rate
   * Swap rate
-  * CUE (when available)
+  * Stream count (by model)
+  * GPUs used per model
+  * Stream duration
 
 ---
 
@@ -632,6 +635,8 @@ Must include:
 ### 11.1 Responsibilities
 
 **TODO:** How do we document the need for prompt variations?
+
+**RESPONSE:** This is more than just the prompt.  It is also the parameters supplied to the pipeline/model.  These need to be captured and stored in the event.  While this is verbose, it will be the only way to track performance across variants.  For the stream tester, we can store the variants in config as two separate tests.
 
 * Execute test profiles:
 
@@ -692,6 +697,7 @@ Mechanisms (functional requirement, implementation flexible):
 ## 14. Testing & Acceptance Criteria
 
 **TODO:** I dont know how much testing we plan to include. here are some ai generated ideas
+**RESPONSE** Updated; The below are sufficient for now.  As we get clarity on the final SLA score formula, we'll want to ensure testing of each component and the formula.  We should automate as much as we can and fill in with manual steps we document.
 
 ### 14.1 Metric-Level Tests
 
@@ -700,15 +706,16 @@ Mechanisms (functional requirement, implementation flexible):
   * jitter coefficient
   * failure rate
   * swap rate
-  * CUE calculation path (or proxy labeling)
 
 ### 14.2 End-to-End Tests
 
 * Synthetic run → events published → ingested → API returns expected metrics → dashboard updates
+* The run should be done across variants and models.
 
 ### 14.3 Public Demo Requirements (Per milestone)
 
 **TODO:** do we still plan to do any public demos????
+**RESPONSE** yes, we can include them as part of our progerss updates on the Water Cooler or Forum posts.
 
 * Live demo showing:
 
