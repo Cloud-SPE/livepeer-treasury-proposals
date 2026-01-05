@@ -2,6 +2,8 @@
 
 This diagram presents a **high-level overview of the analytics data flow** used in *Livepeer’s AI Subnet* (as of July 2024). It shows how AI jobs move through the network, how metrics are produced, how they are streamed, and how they are ultimately consumed by analytics systems and dashboards.
 
+<img src="https://github.com/Cloud-SPE/livepeer-treasury-proposals/blob/main/2025-NaaP-PROPOSAl/Analytics_Architecture.png?raw=true" height="500" width="500">
+
 ---
 
 ## **1. Job Submission Layer**
